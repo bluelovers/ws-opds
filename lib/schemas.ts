@@ -40,14 +40,14 @@ const LINK = {
 		rel: {
 			transform: function (v)
 			{
-				return "http://opds-spec.org/" + v;
+				return new URL(v, "http://opds-spec.org/").href;
 			},
 		},
 		type: {},
 	},
 	fields: {
 		price: PRICE,
-		prices: PRICE,
+		//prices: PRICE,
 	},
 	map: {
 		href: 'name',

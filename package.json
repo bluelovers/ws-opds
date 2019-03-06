@@ -1,21 +1,28 @@
 {
-    "name": "opds",
-    "version": "2.0.0",
-    "main": "index.js",
-    "author": "GitBook <contact@gitbook.com>",
-    "description": "Library to parse/generate OPDS feed",
-    "bugs": "https://github.com/GitbookIO/node-opds/issues",
-    "license": "Apache-2.0",
-    "engines": {
-        "node": ">=0.6"
-    },
-    "dependencies": {
-        "lodash": "^4.17.11",
-        "xml-schema": "2.2.0",
-        "subjects-utils": "0.0.2"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/GitbookIO/node-opds.git"
-    }
+  "name": "opds",
+  "version": "2.0.0",
+  "description": "Library to parse/generate OPDS feed",
+  "homepage": "https://github.com/bluelovers/node-opds#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/node-opds/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/node-opds.git"
+  },
+  "license": "Apache-2.0",
+  "author": "GitBook <contact@gitbook.com>",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "subjects-utils": "0.0.2",
+    "xml-schema": "2.2.0"
+  }
 }
