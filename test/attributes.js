@@ -1,4 +1,6 @@
 
+require('./_mock');
+
 describe('Attributes', function() {
     it('should correctly append attributes', function() {
         var xmlSchema = new XMLSchema({

@@ -1,4 +1,6 @@
 
+require('./_mock');
+
 describe('Parsing', function() {
     describe('Attrbiutes', function() {
         it('should correctly extract from root', function() {

@@ -1,4 +1,6 @@
 
+require('./_mock');
+
 describe('Fields', function() {
     it('should correctly append children', function() {
         var xmlSchema = new XMLSchema({
@@ -35,7 +37,7 @@ describe('Fields', function() {
                 key: {
                     fields: {
                         '$': {
-                            tag: "key 2",
+                            tag: "key2",
                             attributes: {
                                 message: {}
                             }
@@ -49,7 +51,7 @@ describe('Fields', function() {
             key: {
                 message: "hello"
             }
-        }).should.equal('<?xml version="1.0" encoding="UTF-8" standalone="no"?><basic><key><key 2 message="hello"/></key></basic>');
+        }).should.equal('<?xml version="1.0" encoding="UTF-8" standalone="no"?><basic><key><key2 message="hello"/></key></basic>');
     });
 
     it('should correctly transform value', function() {

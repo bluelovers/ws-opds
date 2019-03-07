@@ -1,4 +1,6 @@
 
+require('./_mock');
+
 describe('Basic', function() {
     var xmlSchema = new XMLSchema({
         tag: "basic"
