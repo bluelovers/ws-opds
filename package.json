@@ -1,29 +1,40 @@
 {
-    "name": "xml-schema",
-    "version": "2.2.0",
-    "main": "lib/index.js",
-    "author": "Samy Pessé <samypesse@gmail.com>",
-    "description": "Library to generate/parse XML from JavaScript schemas",
-    "bugs": "https://github.com/SamyPesse/xml-schema/issues",
-    "license": "Apache-2.0",
-    "keywords": ["xml", "schema", "atom"],
-    "engines": {
-        "node": ">=0.6"
-    },
-    "dependencies": {
-        "lodash": "^3.9.3",
-        "xmlbuilder": "2.4.5",
-        "xml-parser": "1.2.1"
-    },
-    "devDependencies": {
-        "mocha": "2.2.1",
-        "should": "5.2.0"
-    },
-    "scripts": {
-        "test": "node_modules/.bin/mocha --reporter spec --timeout 15000"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/SamyPesse/xml-schema.git"
-    }
+  "name": "xml-schema",
+  "version": "2.3.0",
+  "description": "Library to generate/parse XML from JavaScript schemas",
+  "keywords": [
+    "atom",
+    "schema",
+    "xml"
+  ],
+  "homepage": "https://github.com/bluelovers/xml-schema#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/xml-schema/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/xml-schema.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Samy Pessé <samypesse@gmail.com>",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec --timeout 15000"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "xml-parser": "1.2.1",
+    "xmlbuilder": "11.0.0"
+  },
+  "devDependencies": {
+    "mocha": "6.0.2",
+    "should": "13.2.3"
+  },
+  "engines": {
+    "node": ">=0.6"
+  }
 }
