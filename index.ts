@@ -10,8 +10,8 @@ const opdsSchema = new XMLSchema(schemas.FEED);
 export function create(feed): string
 {
 	return opdsSchema.generate(feed, {
-		version: '1.0',
-		encoding: 'UTF-8',
+		//version: '1.0',
+		//encoding: 'UTF-8',
 		standalone: true,
 		pretty: true,
 	});
@@ -21,3 +21,5 @@ export function parse(xml)
 {
 	return opdsSchema.parse(xml);
 }
+
+

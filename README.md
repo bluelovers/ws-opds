@@ -1,61 +1,23 @@
-# node-opds
+# ws-novel-vue README
 
-This is a library to parse or generate OPDS feed. It makes it easy to generate a feed from a list of book., it also handles correctly BISAC subjects.
+    ws-novel-vue
 
-## How to install it?
+## links
 
-```
-$ npm install opds
-```
+- http://emn178.pixnet.net/blog/post/84960350-opds-catalog-1.1
+- https://en.wikipedia.org/wiki/OPDS
+- https://specs.opds.io/opds-1.1.html
+- https://wiki.mobileread.com/wiki/OPDS
 
-## How to use it?
+### tool
 
-:warning: This example is incomplete to pass OPDS Validation (http://opds-validator.appspot.com).
+- http://opds-validator.appspot.com/
 
-```js
-var opds = require("opds");
+### opds
 
-var xml = opds.create({
-    title: "My Catalog",
-    author: {
-        name: "Samy Pesse",
-        uri: "https://www.gitbook.com"
-    },
-    books: [
-        {
-            title: "A book",
-            summary: "This is a test book",
-            updated: new Date(),
-            author: {
-                name: "Aaron O'Mullan",
-                uri: "https://www.gitbook.com/@aaron"
-            },
-            links: [
-                {
-                    rel: "image",
-                    href: "/book/test.jpg",
-                    type: "image/jpeg"
-                },
-                {
-                    rel: "acquisition/buy",
-                    href: "/book/test.epub",
-                    type: "application/epub+zip"
-                }
-            ],
-            categories: [
-                "FIC020000"
-            ]
-        }
-    ]
-});
-```
-
-
-You can also parse an OPDS feed:
-
-```js
-
-var feed = opds.parse('...');
-```
-
+- http://moondownload.com/catalog.xml
+- http://m.gutenberg.org/ebooks/?format=opds
+- http://www.feedbooks.com/publicdomain/catalog.atom
+- https://m.webnovel.com/
+- https://gist.github.com/bluelovers/fd5e823c69910c1ba20d85b9f1a913ca/
 

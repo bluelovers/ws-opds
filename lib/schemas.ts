@@ -1,3 +1,6 @@
+import { EnumLinkRel } from './const';
+import { getOPDSRel } from './util';
+
 const DATE = {
 	transform: function (d)
 	{
@@ -22,10 +25,7 @@ const PRICE = {
 	tag: 'opds:price',
 	inner: 'value',
 	attributes: {
-		currency: {
-			name: 'currencycode',
-			default: 'USD',
-		},
+		currencycode: {},
 	},
 	map: {
 		to: 'value',
@@ -37,10 +37,13 @@ const LINK = {
 	array: true,
 	attributes: {
 		href: {},
+		title: {},
 		rel: {
-			transform: function (v)
+			transform(v: string)
 			{
-				return new URL(v, "http://opds-spec.org/").href;
+				return getOPDSRel(v)
+
+				//return new URL(v, "http://opds-spec.org/").href;
 			},
 		},
 		type: {},
@@ -74,10 +77,22 @@ const CATEGORY = {
 const CONTENT = {
 	tag: 'content',
 	inner: 'value',
-	raw: function ()
+	cdata: true,
+	raw: true,
+	/*
+	raw(s)
 	{
-		return !!(this.value.type && this.value.type != 'text');
+		console.log(s, this, this.value.type);
+
+		if (this.value.type === 'xhtml')
+		{
+			return true;
+		}
+
+		//return !!(this.value.type && this.value.type != 'text');
+		return true;
 	},
+	*/
 	attributes: {
 		type: {
 			default: "text",
@@ -114,6 +129,9 @@ const ENTRY = {
 		},
 		rights: {},
 		content: CONTENT,
+		identifier: {
+			tag: "dc:identifier",
+		},
 	},
 };
 

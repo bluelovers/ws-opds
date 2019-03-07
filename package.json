@@ -22,7 +22,12 @@
   },
   "dependencies": {
     "lodash": "^4.17.11",
+    "r2-opds-js": "^1.0.6",
+    "reflect-metadata": "^0.1.13",
+    "sort-object-keys2": "^1.1.0",
     "subjects-utils": "0.0.2",
-    "xml-schema": "2.2.0"
+    "symbol.inspect": "^1.0.0",
+    "ta-json-x": "^2.5.0",
+    "xml-schema": "2.3.0"
   }
 }

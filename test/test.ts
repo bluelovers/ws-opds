@@ -1,12 +1,24 @@
-import opds = require("..");
-import fs = require("fs");
+import { Feed } from '../lib/v1/index';
 
-let xml = opds.create({
+let k = Feed.deserialize<Feed>({
 	title: "My Catalog",
 	authors: [
 		{
 			name: "Samy Pesse",
 			uri: "https://www.gitbook.com",
+		},
+	],
+	links: [
+		{
+			rel: "image",
+			href: "/book/test.jpg",
+			type: "image/jpeg",
+		},
+		{
+			rel: "acquisition/buy",
+			href: "/book/test.epub",
+			type: "application/epub+zip",
+			price: 10,
 		},
 	],
 	books: [
@@ -30,10 +42,7 @@ let xml = opds.create({
 					rel: "acquisition/buy",
 					href: "/book/test.epub",
 					type: "application/epub+zip",
-					price: {
-						currencycode: 'USD',
-						value: 10,
-					},
+					price: 10,
 				},
 			],
 			categories: [
@@ -43,12 +52,23 @@ let xml = opds.create({
 				type: 'xhtml',
 				value: "<b>Hello World</b>",
 			},
+
+			image: 'https://www.gitbook.com/@aaron',
 		},
 		{
 			title: "A book 2",
 			summary: "This is a test book",
 			updated: new Date(),
+			issued: new Date(),
 			authors: [
+				{
+					name: "Aaron O'Mullan",
+					uri: "https://www.gitbook.com/@aaron",
+				},
+				{
+					name: "Aaron O'Mullan",
+					uri: "https://www.gitbook.com/@aaron",
+				},
 				{
 					name: "Aaron O'Mullan",
 					uri: "https://www.gitbook.com/@aaron",
@@ -72,6 +92,10 @@ let xml = opds.create({
 			],
 			categories: [
 				"FIC020000",
+				{
+					term: '7777777',
+					label: '8888',
+				}
 			],
 			content: {
 				type: 'text',
@@ -81,20 +105,10 @@ let xml = opds.create({
 	],
 });
 
-console.log(xml);
+console.log(k);
 
-let data = opds.parse(xml)
+console.dir(k.serialize());
 
-console.dir(data, {
-	depth: null,
-	colors: true,
-});
+console.log(k.stringify());
 
-let xml2 = opds.create(data);
-
-//console.log(xml2);
-
-console.log(xml2 === xml);
-
-fs.writeFileSync('./temp/xml1.xml', xml);
-fs.writeFileSync('./temp/xml2.xml', xml2);
+console.log(k.toOPDS());
