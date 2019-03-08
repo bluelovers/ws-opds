@@ -1,6 +1,6 @@
-import { Feed } from '../lib/v1/index';
+import { Author, Feed } from '../lib/v1';
 
-let k = Feed.deserialize<Feed>({
+let k = Feed.deserialize<Feed, Feed.TSTYPE>({
 	title: "My Catalog",
 	authors: [
 		{
@@ -95,6 +95,10 @@ let k = Feed.deserialize<Feed>({
 				{
 					term: '7777777',
 					label: '8888',
+				},
+				{
+					code: '7777777',
+					label: '8888',
 				}
 			],
 			content: {
@@ -105,9 +109,17 @@ let k = Feed.deserialize<Feed>({
 	],
 });
 
+k.addAuthor('opop');
+
+k.addAuthor(new Author({
+	name: 'kkkkkkkkkkkk',
+}));
+
 console.log(k);
 
-console.dir(k.serialize());
+console.dir(k.serialize(), {
+	depth: null,
+});
 
 console.log(k.stringify());
 

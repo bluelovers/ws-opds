@@ -1,5 +1,5 @@
-import { EnumLinkRel } from './const';
-import { getOPDSRel } from './util';
+import { EnumLinkRel } from '../const';
+import { getOPDSRel } from '../util';
 
 const DATE = {
 	transform: function (d)

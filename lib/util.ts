@@ -1,6 +1,7 @@
-import { Price } from './v1/index';
+import { Price } from './v1/core';
 import { Schema } from './class';
 import { EnumLinkRel } from './const';
+import { array_unique, array_unique_overwrite } from 'array-hyper-unique';
 
 export function typedOrObjectList<A, B extends Schema.Base>(inputList: unknown | unknown[], typeA: A | string, typeB: {
 	new(): B
@@ -25,7 +26,7 @@ export function typedOrObjectList<A, B extends Schema.Base>(inputList: unknown |
 			typeFn = (v) => (v instanceof typeA)
 		}
 
-		return (inputList as (A | B)[]).reduce(function (a, v)
+		let arr = (inputList as (A | B)[]).reduce(function (a, v)
 		{
 			if (typeFn(v))
 			{
@@ -34,16 +35,19 @@ export function typedOrObjectList<A, B extends Schema.Base>(inputList: unknown |
 			else if (v != null)
 			{
 				let r = (typeB as any as typeof Schema.Base).deserialize(v as any);
-				let ls = Object.entries(r.serialize()).filter(r => r[1] != null);
 
-				if (ls.length > 0)
+				if (r._isvaild())
 				{
 					a.push(r);
 				}
 			}
 
 			return a
-		}, [])
+		}, []);
+
+		array_unique_overwrite(arr);
+
+		return arr;
 	}
 
 }

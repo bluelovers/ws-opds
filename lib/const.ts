@@ -124,4 +124,10 @@ export enum EnumMIME
 	NAVIGATION_FEED = 'application/atom+xml;profile=opds-catalog;kind=navigation',
 }
 
+export enum EnumPriceCurrencyCode
+{
+	TWD = 'TWD',
+	USD = 'USD',
+}
+
 export default exports as typeof import('./const');

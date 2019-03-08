@@ -1,2 +1,7 @@
-export declare function create(feed: any): string;
-export declare function parse(xml: any): any;
+/**
+ * Created by user on 2019/3/8.
+ */
+import OPDSV1 = require('./lib/v1');
+export { OPDSV1 };
+declare const _default: typeof import(".");
+export default _default;

@@ -6,16 +6,12 @@ import { IParseOptions, JsonElementType, JsonObject, JsonProperty, JsonWriteonly
 import util = require('util');
 import "reflect-metadata";
 import SymbolInspect = require('symbol.inspect');
+import { EnumPriceCurrencyCode } from './const';
 
 export namespace Schema
 {
-	export interface IBaseJSON
-	{
-		[k: string]: unknown
-	}
-
 	@JsonObject()
-	export abstract class Base<D extends IBaseJSON = IBaseJSON>
+	export abstract class Base<D extends Base.TSTYPE = Base.TSTYPE>
 	{
 
 		constructor(...argv)
@@ -50,16 +46,16 @@ export namespace Schema
 			return JSON.stringify(this.serialize(), null, pretty);
 		}
 
-		serialize<T extends D | IBaseJSON>(): T
+		serialize<T extends D | Base.TSTYPE>(): T
 		{
 			return TaJson.serialize(this);
 		}
 
-		static deserialize<T extends Base, J extends IBaseJSON = Partial<{
-			[k in keyof T]?: T[k]
-		}>>(json: J, options?: IParseOptions): T
+		static deserialize<T extends Base>(json: Partial<T>, options?: IParseOptions): T
+		static deserialize<T extends Base, J extends Base.TSTYPE | Partial<T>>(json: J, options?: IParseOptions): T & Base
+		static deserialize<T extends Base, J extends Base.TSTYPE | Partial<T>>(json: J, options?: IParseOptions): T & Base
 		{
-			return TaJson.deserialize<T>(json, this, options);
+			return TaJson.deserialize<T>(json, this, options) as any;
 		}
 
 		static parse<T extends Base>(json: string, options?: IParseOptions): T
@@ -67,7 +63,23 @@ export namespace Schema
 			return TaJson.parse<T>(json, this, options)
 		}
 
+		_isvaild(): boolean
+		{
+			let ls = Object.entries(this.serialize()).filter(r => r[1] != null);
+
+			return ls.length > 0;
+		}
+
 	}
+
+	export declare namespace Base
+	{
+		export interface TSTYPE
+		{
+			[k: string]: unknown
+		}
+	}
+
 }
 
 export default exports as typeof import('./class');

@@ -1,25 +1,10 @@
-import _ = require("lodash");
-import XMLSchema = require("xml-schema");
-import subjects = require("subjects-utils");
-
-import schemas = require('./lib/schemas');
-
-const opdsSchema = new XMLSchema(schemas.FEED);
-
-// Create an opds feed
-export function create(feed): string
-{
-	return opdsSchema.generate(feed, {
-		//version: '1.0',
-		//encoding: 'UTF-8',
-		standalone: true,
-		pretty: true,
-	});
-}
-
-export function parse(xml)
-{
-	return opdsSchema.parse(xml);
-}
+/**
+ * Created by user on 2019/3/8.
+ */
 
 
+import OPDSV1 = require('./lib/v1');
+
+export { OPDSV1 }
+
+export default exports as typeof import('./index');

@@ -93,5 +93,9 @@ export declare enum EnumMIME {
      */
     NAVIGATION_FEED = "application/atom+xml;profile=opds-catalog;kind=navigation"
 }
+export declare enum EnumPriceCurrencyCode {
+    TWD = "TWD",
+    USD = "USD"
+}
 declare const _default: typeof import("./const");
 export default _default;
