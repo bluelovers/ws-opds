@@ -1,8 +1,8 @@
 {
   "name": "@node-novel/opds-builder",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
-  "description": "",
+  "description": "build OPDS xml from node-novel novel-stat.json",
   "license": "ISC",
   "author": "",
   "main": "index.js",
@@ -22,12 +22,14 @@
     "mime-types": "^2.1.22",
     "moment": "^2.24.0",
     "node-novel-info": "^2.3.31",
-    "opds-extra": "^3.0.1",
+    "opds-extra": "^3.0.3",
     "regexp-cjk": "^2.0.22",
     "str-util": "^2.3.17",
     "uni-string": "^1.1.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@bluelovers/tsconfig": "^1.0.1"
+  },
   "publishConfig": {
     "access": "public"
   }

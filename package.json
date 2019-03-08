@@ -10,7 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@bluelovers/tsconfig": "^1.0.1"
+    "@bluelovers/tsconfig": "^1.0.1",
+    "@types/bluebird": "^3.5.26",
+    "@types/node": "^11.10.5"
   },
   "resolutions": {}
 }
