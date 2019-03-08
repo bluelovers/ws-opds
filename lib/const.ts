@@ -103,6 +103,7 @@ export enum EnumMIME
 	html = 'text/htm',
 	css = 'text/css',
 	plain = 'text/plain',
+	txt = 'text/plain',
 
 	atom = 'application/atom+xml',
 

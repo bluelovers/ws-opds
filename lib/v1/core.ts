@@ -432,14 +432,18 @@ export class Feed extends Schema.Base<Feed.TSTYPE>
 	}
 
 	@JsonProperty()
+	@JsonElementType(String)
 	public id?: string;
 
 	@JsonProperty()
+	@JsonElementType(String)
 	public title: string;
 	@JsonProperty()
+	@JsonElementType(String)
 	public subtitle: string;
 
 	@JsonProperty()
+	@JsonElementType(String)
 	public icon?: string;
 
 	protected _updated: moment.Moment;
@@ -491,6 +495,7 @@ export class Feed extends Schema.Base<Feed.TSTYPE>
 	}
 
 	@JsonProperty()
+	@JsonElementType(String)
 	public source?: string;
 
 	static deserialize<T extends Feed, J extends Feed.TSTYPE>(json: J, options?: IParseOptions): T
