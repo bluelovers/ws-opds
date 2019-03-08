@@ -146,6 +146,7 @@ export declare class Feed extends Schema.Base<Feed.TSTYPE> {
     title: string;
     subtitle: string;
     icon?: string;
+    logo?: string;
     protected _updated: moment.Moment;
     updated: moment.MomentInput;
     authors?: Author[];

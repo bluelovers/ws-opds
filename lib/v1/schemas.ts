@@ -154,6 +154,7 @@ export const FEED = {
 		id: {},
 		title: {},
 		icon: {},
+		logo: {},
 		updated: DATE,
 		links: LINK,
 		authors: AUTHOR,

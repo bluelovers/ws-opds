@@ -446,6 +446,10 @@ export class Feed extends Schema.Base<Feed.TSTYPE>
 	@JsonElementType(String)
 	public icon?: string;
 
+	@JsonProperty()
+	@JsonElementType(String)
+	public logo?: string;
+
 	protected _updated: moment.Moment;
 
 	@JsonProperty('updated')

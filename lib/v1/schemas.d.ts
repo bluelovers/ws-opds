@@ -17,6 +17,7 @@ export declare const FEED: {
         id: {};
         title: {};
         icon: {};
+        logo: {};
         updated: {
             transform: (d: any) => string;
         };
