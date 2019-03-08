@@ -35,8 +35,11 @@ export function buildOPDS(novelStatJsonPath: string, outputOPDSPath: string)
 	{
 		let ret = await _cache(novelStatJsonPath);
 
+		let siteURL = 'https://demonovel.netlify.com/';
+
 		let feed = OPDSV1.Feed.deserialize({
 			title: '@node-novel',
+			subtitle: siteURL,
 
 			icon: base64_qrcode,
 
@@ -55,8 +58,8 @@ export function buildOPDS(novelStatJsonPath: string, outputOPDSPath: string)
 
 			authors: [
 				{
-					name: 'node-novel',
-					uri: 'https://demonovel.netlify.com/',
+					name: '@node-novel',
+					uri: siteURL,
 				},
 			],
 

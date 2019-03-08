@@ -23,8 +23,10 @@ const MIMETypes = require("mime-types");
 function buildOPDS(novelStatJsonPath, outputOPDSPath) {
     return Bluebird.resolve().then(async function () {
         let ret = await _cache(novelStatJsonPath);
+        let siteURL = 'https://demonovel.netlify.com/';
         let feed = opds_extra_1.OPDSV1.Feed.deserialize({
             title: '@node-novel',
+            subtitle: siteURL,
             icon: const_2.base64_qrcode,
             links: [
                 {
@@ -40,8 +42,8 @@ function buildOPDS(novelStatJsonPath, outputOPDSPath) {
             ],
             authors: [
                 {
-                    name: 'node-novel',
-                    uri: 'https://demonovel.netlify.com/',
+                    name: '@node-novel',
+                    uri: siteURL,
                 },
             ],
         });
