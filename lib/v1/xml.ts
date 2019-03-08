@@ -1,5 +1,5 @@
 import _ = require("lodash");
-import XMLSchema = require("xml-schema");
+import XMLSchema = require("xml-schema2");
 import subjects = require("subjects-utils");
 
 import schemas = require('./schemas');
