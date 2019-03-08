@@ -9,7 +9,7 @@ export declare namespace Schema {
         protected _init(...argv: any[]): void;
         protected BeforeDeserialized(...argv: any[]): void;
         stringify(pretty?: boolean | string): string;
-        serialize<T extends D | Base.TSTYPE>(): T;
+        serialize<T extends D>(): T;
         static deserialize<T extends Base>(json: Partial<T>, options?: IParseOptions): T;
         static deserialize<T extends Base, J extends Base.TSTYPE | Partial<T>>(json: J, options?: IParseOptions): T & Base;
         static parse<T extends Base>(json: string, options?: IParseOptions): T;

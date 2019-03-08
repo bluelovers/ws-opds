@@ -480,9 +480,14 @@ export class Feed extends Schema.Base<Feed.TSTYPE>
 		}
 	}
 
-	toOPDS()
+	toXML()
 	{
 		return xml.create(this.serialize())
+	}
+
+	static parseXML(data: string)
+	{
+		return this.deserialize(xml.parse(data))
 	}
 
 	@JsonProperty()
@@ -493,10 +498,11 @@ export class Feed extends Schema.Base<Feed.TSTYPE>
 		return TaJson.deserialize<T>(json, this, options);
 	}
 
-	static parse<T extends Feed>(json: string, options?: IParseOptions): T
+	static parseJSON<T extends Feed>(json: string, options?: IParseOptions): T
 	{
 		return TaJson.parse<T>(json, this, options)
 	}
+
 }
 
 export declare namespace Feed
@@ -514,7 +520,3 @@ export declare namespace Feed
 		source?: string;
 	}
 }
-
-
-
-

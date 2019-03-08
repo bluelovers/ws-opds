@@ -1,6 +1,18 @@
-import { Author, Feed } from '../lib/v1';
+import { OPDSV1 } from '../';
 
-let k = Feed.deserialize<Feed, Feed.TSTYPE>({
+const SymbolInspect = require('symbol.inspect');
+const util = require('util');
+const moment = require("moment");
+
+util.inspect.defaultOptions.colors = true;
+util.inspect.defaultOptions.showHidden = true;
+
+moment.fn[SymbolInspect] = function ()
+{
+	return `Moment<${this.format()}>`;
+};
+
+let k = OPDSV1.Feed.deserialize({
 	title: "My Catalog",
 	authors: [
 		{
@@ -111,7 +123,7 @@ let k = Feed.deserialize<Feed, Feed.TSTYPE>({
 
 k.addAuthor('opop');
 
-k.addAuthor(new Author({
+k.addAuthor(new OPDSV1.Author({
 	name: 'kkkkkkkkkkkk',
 }));
 
@@ -123,4 +135,4 @@ console.dir(k.serialize(), {
 
 console.log(k.stringify());
 
-console.log(k.toOPDS());
+console.log(k.toXML());

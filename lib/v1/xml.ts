@@ -3,11 +3,12 @@ import XMLSchema = require("xml-schema");
 import subjects = require("subjects-utils");
 
 import schemas = require('./schemas');
+import { Feed } from './core';
 
 const opdsSchema = new XMLSchema(schemas.FEED);
 
 // Create an opds feed
-export function create(feed): string
+export function create(feed: Feed.TSTYPE): string
 {
 	return opdsSchema.generate(feed, {
 		//version: '1.0',
@@ -17,7 +18,7 @@ export function create(feed): string
 	});
 }
 
-export function parse(xml)
+export function parse(xml: string)
 {
 	return opdsSchema.parse(xml);
 }

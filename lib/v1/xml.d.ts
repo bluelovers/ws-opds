@@ -1,2 +1,3 @@
-export declare function create(feed: any): string;
-export declare function parse(xml: any): any;
+import { Feed } from './core';
+export declare function create(feed: Feed.TSTYPE): string;
+export declare function parse(xml: string): any;

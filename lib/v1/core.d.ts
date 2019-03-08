@@ -152,10 +152,11 @@ export declare class Feed extends Schema.Base<Feed.TSTYPE> {
     links?: Link[];
     books?: Entry[];
     addAuthor(value: Author.TSTYPE2): Author;
-    toOPDS(): string;
+    toXML(): string;
+    static parseXML(data: string): Feed;
     source?: string;
     static deserialize<T extends Feed, J extends Feed.TSTYPE>(json: J, options?: IParseOptions): T;
-    static parse<T extends Feed>(json: string, options?: IParseOptions): T;
+    static parseJSON<T extends Feed>(json: string, options?: IParseOptions): T;
 }
 export declare namespace Feed {
     interface TSTYPE {

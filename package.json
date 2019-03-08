@@ -1,7 +1,22 @@
 {
-  "name": "opds",
-  "version": "2.0.0",
+  "name": "opds-extra",
+  "version": "3.0.0",
   "description": "Library to parse/generate OPDS feed",
+  "keywords": [
+    "atom",
+    "book",
+    "ebook",
+    "epub",
+    "feed",
+    "json",
+    "node-novel",
+    "novel",
+    "opds",
+    "parse",
+    "stringify",
+    "toc",
+    "xml"
+  ],
   "homepage": "https://github.com/bluelovers/node-opds#readme",
   "bugs": {
     "url": "https://github.com/bluelovers/node-opds/issues"
@@ -11,7 +26,7 @@
     "url": "git+https://github.com/bluelovers/node-opds.git"
   },
   "license": "Apache-2.0",
-  "author": "GitBook <contact@gitbook.com>",
+  "author": "",
   "main": "index.js",
   "directories": {
     "lib": "lib",
@@ -30,5 +45,6 @@
     "symbol.inspect": "^1.0.0",
     "ta-json-x": "^2.5.0",
     "xml-schema": "2.3.0"
-  }
+  },
+  "devDependencies": {}
 }

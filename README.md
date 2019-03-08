@@ -1,6 +1,18 @@
 # ws-novel-vue README
 
-    ws-novel-vue
+    This is a library to parse or generate OPDS feed. It makes it easy to generate a feed from a list of book. support JSON / XML
+
+## demo
+
+```ts
+import { OPDSV1 } from 'opds-extra';
+
+OPDSV1.parseXML(xml_string)
+
+OPDSV1.parseJSON(json_string)
+OPDSV1.parseJSONObject(json_object)
+```
+
 
 ## links
 
@@ -20,4 +32,3 @@
 - http://www.feedbooks.com/publicdomain/catalog.atom
 - https://m.webnovel.com/
 - https://gist.github.com/bluelovers/fd5e823c69910c1ba20d85b9f1a913ca/
-

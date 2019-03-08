@@ -46,7 +46,7 @@ export namespace Schema
 			return JSON.stringify(this.serialize(), null, pretty);
 		}
 
-		serialize<T extends D | Base.TSTYPE>(): T
+		serialize<T extends D>(): T
 		{
 			return TaJson.serialize(this);
 		}

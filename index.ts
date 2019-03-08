@@ -3,7 +3,7 @@
  */
 
 
-import OPDSV1 = require('./lib/v1');
+import OPDSV1 from './lib/v1';
 
 export { OPDSV1 }
 
