@@ -449,6 +449,7 @@ export class Feed extends Schema.Base<Feed.TSTYPE>
 	protected _updated: moment.Moment;
 
 	@JsonProperty('updated')
+	@JsonElementType(Number)
 	public get updated()
 	{
 		return (this._updated).toDate()
