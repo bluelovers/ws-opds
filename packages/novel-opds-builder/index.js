@@ -74,7 +74,7 @@ function buildOPDS(novelStatJsonPath, outputOPDSPath) {
                     links.push({
                         rel: const_1.EnumLinkRel.ACQUISITION,
                         href: new URL([
-                            novel.pathMain,
+                            novel.pathMain_base,
                             novel.cache.epub_basename,
                         ].join('/'), outputUrl),
                         type: const_1.EnumMIME.epub,
@@ -84,7 +84,7 @@ function buildOPDS(novelStatJsonPath, outputOPDSPath) {
                     links.push({
                         rel: const_1.EnumLinkRel.ACQUISITION,
                         href: new URL([
-                            novel.pathMain,
+                            novel.pathMain_base,
                             'out',
                             novel.cache.txt_basename,
                         ].join('/'), outputUrl),

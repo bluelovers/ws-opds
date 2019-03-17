@@ -1,6 +1,6 @@
 {
   "name": "@node-novel/opds-builder",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "private": false,
   "description": "build OPDS xml from node-novel novel-stat.json",
   "license": "ISC",
@@ -13,16 +13,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@node-novel/cache-loader": "^1.0.9",
+    "@node-novel/cache-loader": "^1.0.11",
     "array-hyper-unique": "^1.0.7",
     "bluebird": "^3.5.3",
-    "cjk-conv": "^1.1.20",
+    "cjk-conv": "^1.1.22",
     "fs-extra": "^7.0.1",
     "hash-sum": "^1.0.2",
     "mime-types": "^2.1.22",
     "moment": "^2.24.0",
-    "node-novel-info": "^2.3.31",
-    "opds-extra": "^3.0.3",
+    "node-novel-info": "^2.3.32",
+    "opds-extra": "^3.0.4",
     "regexp-cjk": "^2.0.22",
     "str-util": "^2.3.17",
     "uni-string": "^1.1.0"
