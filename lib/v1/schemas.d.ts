@@ -16,6 +16,7 @@ export declare const FEED: {
     fields: {
         id: {};
         title: {};
+        subtitle: {};
         icon: {};
         logo: {};
         updated: {

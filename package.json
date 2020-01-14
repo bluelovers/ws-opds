@@ -1,6 +1,6 @@
 {
   "name": "opds-extra",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Library to parse/generate OPDS feed",
   "keywords": [
     "atom",
@@ -36,15 +36,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "array-hyper-unique": "^1.0.7",
-    "lodash": "^4.17.11",
-    "r2-opds-js": "^1.0.6",
+    "array-hyper-unique": "^1.1.0",
+    "lodash": "^4.17.15",
+    "r2-opds-js": "^1.0.21",
     "reflect-metadata": "^0.1.13",
     "sort-object-keys2": "^1.1.0",
     "subjects-utils": "0.0.2",
     "symbol.inspect": "^1.0.0",
-    "ta-json-x": "^2.5.0",
+    "ta-json-x": "^2.5.2",
     "xml-schema2": "2.3.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/lodash": "^4.14.149"
+  }
 }

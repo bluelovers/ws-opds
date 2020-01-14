@@ -14,6 +14,7 @@ moment.fn[SymbolInspect] = function ()
 
 let k = OPDSV1.Feed.deserialize({
 	title: "My Catalog",
+	subtitle: "My Catalog subtitle",
 	authors: [
 		{
 			name: "Samy Pesse",

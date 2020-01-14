@@ -17,16 +17,19 @@ export declare namespace Price {
 }
 export declare class Link extends Schema.Base<Link.TSTYPE> {
     protected _href: string | URL;
-    href: string | URL;
+    get href(): string | URL;
+    set href(value: string | URL);
     rel: string;
     title: string | EnumLinkRel;
     type: string | EnumMIME;
     protected _price: (Price | number)[];
-    price: Price | number | (Price | number)[];
+    get price(): Price | number | (Price | number)[];
+    get prices(): Price | number | (Price | number)[];
     /**
-    * @alias price
-    */
-    prices: Price | number | (Price | number)[];
+     * @alias price
+     */
+    set prices(value: Price | number | (Price | number)[]);
+    set price(value: Price | number | (Price | number)[]);
     getRelFullURL(): string;
     /**
      * 語系
@@ -80,7 +83,7 @@ export declare class EntryCategory extends Schema.Base<EntryCategory.TSTYPE> {
     term: string;
     label?: string;
     scheme?: string;
-    code: string;
+    set code(value: string);
 }
 export declare namespace EntryCategory {
     type TSTYPE = ({
@@ -102,17 +105,21 @@ export declare class Entry extends Schema.Base<Entry.TSTYPE> {
     title: string;
     authors?: Author[];
     protected _updated: moment.Moment;
-    updated: moment.MomentInput;
+    get updated(): moment.MomentInput;
+    set updated(_updated: moment.MomentInput);
     protected _published: moment.Moment;
-    published: moment.MomentInput;
+    get published(): moment.MomentInput;
+    set published(_updated: moment.MomentInput);
     protected _issued: moment.Moment;
-    issued: moment.MomentInput;
+    get issued(): moment.MomentInput;
+    set issued(_updated: moment.MomentInput);
     links: Link[];
     summary?: string;
     content?: EntryContent;
     protected _categories?: (string | EntryCategory)[];
-    categories: EntryCategory | string | (EntryCategory | string)[];
-    image: string | URL;
+    get categories(): EntryCategory | string | (EntryCategory | string)[];
+    set categories(value: EntryCategory | string | (EntryCategory | string)[]);
+    set image(url: string | URL);
     publisher?: string;
     language?: string;
     rights?: string;
@@ -148,7 +155,8 @@ export declare class Feed extends Schema.Base<Feed.TSTYPE> {
     icon?: string;
     logo?: string;
     protected _updated: moment.Moment;
-    updated: moment.MomentInput;
+    get updated(): moment.MomentInput;
+    set updated(_updated: moment.MomentInput);
     authors?: Author[];
     links?: Link[];
     books?: Entry[];
