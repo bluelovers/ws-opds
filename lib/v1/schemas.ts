@@ -74,8 +74,7 @@ const CATEGORY = {
 	},
 };
 
-const CONTENT = {
-	tag: 'content',
+const CONTENT_BASE = {
 	inner: 'value',
 	cdata: true,
 	raw: true,
@@ -103,14 +102,23 @@ const CONTENT = {
 	},
 };
 
+const CONTENT = {
+	...CONTENT_BASE,
+	tag: 'content',
+};
+
 const ENTRY = {
 	tag: 'entry',
 	array: true,
 	fields: {
 		id: {},
 		title: {},
+		published: DATE,
 		updated: DATE,
-		summary: {},
+		summary: {
+			...CONTENT_BASE,
+			tag: 'summary',
+		},
 		links: LINK,
 		authors: AUTHOR,
 		categories: CATEGORY,

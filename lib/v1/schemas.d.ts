@@ -67,10 +67,26 @@ export declare const FEED: {
             fields: {
                 id: {};
                 title: {};
+                published: {
+                    transform: (d: any) => string;
+                };
                 updated: {
                     transform: (d: any) => string;
                 };
-                summary: {};
+                summary: {
+                    tag: string;
+                    inner: string;
+                    cdata: boolean;
+                    raw: boolean;
+                    attributes: {
+                        type: {
+                            default: string;
+                        };
+                    };
+                    map: {
+                        to: string;
+                    };
+                };
                 links: {
                     tag: string;
                     array: boolean;
