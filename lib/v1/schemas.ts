@@ -113,8 +113,14 @@ const ENTRY = {
 	fields: {
 		id: {},
 		title: {},
-		published: DATE,
-		updated: DATE,
+		published: {
+			...DATE,
+			tag: 'published',
+		},
+		updated: {
+			...DATE,
+			tag: 'updated',
+		},
 		summary: {
 			...CONTENT_BASE,
 			tag: 'summary',

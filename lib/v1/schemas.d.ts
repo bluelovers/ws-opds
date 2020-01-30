@@ -68,9 +68,11 @@ export declare const FEED: {
                 id: {};
                 title: {};
                 published: {
+                    tag: string;
                     transform: (d: any) => string;
                 };
                 updated: {
+                    tag: string;
                     transform: (d: any) => string;
                 };
                 summary: {
