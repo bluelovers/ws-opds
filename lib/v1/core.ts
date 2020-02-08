@@ -6,6 +6,7 @@ import { getOPDSRel, hrefURL, typedOrObjectList } from '../util';
 import moment = require("moment");
 import xml = require("./xml");
 
+// @ts-ignore
 export class Price extends Schema.Base<Price.TSTYPE>
 {
 	@JsonProperty()
@@ -27,6 +28,7 @@ export declare namespace Price
 	export type TSTYPE2 = Price | TSTYPE1 | TSTYPE;
 }
 
+// @ts-ignore
 export class Link extends Schema.Base<Link.TSTYPE>
 {
 	protected _href: string | URL;
@@ -150,6 +152,7 @@ export declare namespace Link
 	export type TSTYPE2 = Link | TSTYPE
 }
 
+// @ts-ignore
 export class Author extends Schema.Base<Author.TSTYPE>
 {
 	constructor(value?: Author.TSTYPE2)
@@ -197,6 +200,7 @@ export declare namespace Author
 	export type TSTYPE2 = Author | TSTYPE1 | TSTYPE
 }
 
+// @ts-ignore
 export class EntryContent extends Schema.Base<EntryContent.TSTYPE>
 {
 	@JsonProperty()
@@ -254,6 +258,7 @@ export declare namespace EntryCategory
 	export type TSTYPE2 = EntryCategory | TSTYPE1 | TSTYPE;
 }
 
+// @ts-ignore
 export class Entry extends Schema.Base<Entry.TSTYPE>
 {
 	@JsonProperty()
@@ -264,6 +269,9 @@ export class Entry extends Schema.Base<Entry.TSTYPE>
 
 	@JsonProperty()
 	public title: string;
+
+	@JsonProperty()
+	public subtitle?: string;
 
 	@JsonProperty()
 	@JsonElementType(Author)
@@ -505,11 +513,13 @@ export class Feed extends Schema.Base<Feed.TSTYPE>
 
 	static deserialize<T extends Feed, J extends Feed.TSTYPE>(json: J, options?: IParseOptions): T
 	{
+		// @ts-ignore
 		return TaJson.deserialize<T>(json, this, options);
 	}
 
 	static parseJSON<T extends Feed>(json: string, options?: IParseOptions): T
 	{
+		// @ts-ignore
 		return TaJson.parse<T>(json, this, options)
 	}
 

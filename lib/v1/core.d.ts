@@ -103,6 +103,7 @@ export declare class Entry extends Schema.Base<Entry.TSTYPE> {
     id: string;
     identifier: string;
     title: string;
+    subtitle?: string;
     authors?: Author[];
     protected _updated: moment.Moment;
     get updated(): moment.MomentInput;

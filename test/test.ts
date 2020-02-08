@@ -1,4 +1,5 @@
 import { OPDSV1 } from '../';
+import { Feed } from '../lib/v1/core/Feed';
 
 const SymbolInspect = require('symbol.inspect');
 const util = require('util');
@@ -12,7 +13,7 @@ moment.fn[SymbolInspect] = function ()
 	return `Moment<${this.format()}>`;
 };
 
-let k = OPDSV1.Feed.deserialize({
+let k = Feed.deserialize({
 	title: "My Catalog",
 	subtitle: "My Catalog subtitle",
 	authors: [

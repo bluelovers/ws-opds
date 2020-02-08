@@ -67,6 +67,7 @@ export declare const FEED: {
             fields: {
                 id: {};
                 title: {};
+                subtitle: {};
                 published: {
                     tag: string;
                     transform: (d: any) => string;
