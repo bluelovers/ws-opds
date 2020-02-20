@@ -2,6 +2,9 @@
 /**
  * Created by user on 2019/3/8.
  */
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const cache_loader_1 = require("@node-novel/cache-loader");
 const class_1 = require("node-novel-info/class");
@@ -10,10 +13,10 @@ const list_1 = require("cjk-conv/lib/zh/table/list");
 const opds_extra_1 = require("opds-extra");
 const const_1 = require("opds-extra/lib/const");
 const const_2 = require("./lib/const");
-const StrUtil = require("str-util");
-const Bluebird = require("bluebird");
-const fs = require("fs-extra");
-const MIMETypes = require("mime-types");
+const str_util_1 = __importDefault(require("str-util"));
+const bluebird_1 = __importDefault(require("bluebird"));
+const fs_extra_1 = __importDefault(require("fs-extra"));
+const mime_types_1 = __importDefault(require("mime-types"));
 /**
  * build OPDS xml from node-novel novel-stat.json
  *
@@ -21,7 +24,7 @@ const MIMETypes = require("mime-types");
  * @param {string} outputOPDSPath
  */
 function buildOPDS(novelStatJsonPath, outputOPDSPath) {
-    return Bluebird.resolve().then(async function () {
+    return bluebird_1.default.resolve().then(async function () {
         let ret = await _cache(novelStatJsonPath);
         let siteURL = 'https://demonovel.netlify.com/';
         let feed = opds_extra_1.OPDSV1.Feed.deserialize({
@@ -94,7 +97,7 @@ function buildOPDS(novelStatJsonPath, outputOPDSPath) {
                 if (links.length) {
                     if (novel.mdconf.novel && novel.mdconf.novel.cover) {
                         let href = novel.mdconf.novel.cover;
-                        let type = MIMETypes.lookup(href);
+                        let type = mime_types_1.default.lookup(href);
                         if (!type || !/image/.test(type)) {
                             type = const_1.EnumMIME.jpg;
                         }
@@ -120,7 +123,7 @@ function buildOPDS(novelStatJsonPath, outputOPDSPath) {
             }
         });
         let xml = feed.toXML();
-        await fs.outputFile(outputOPDSPath, xml);
+        await fs_extra_1.default.outputFile(outputOPDSPath, xml);
         return {
             ret,
             feed,
@@ -135,11 +138,11 @@ function loadNovelStatCache(json) {
     });
 }
 function toHalfWidthLocaleLowerCase(s) {
-    return StrUtil.toHalfWidth(s).toLocaleLowerCase();
+    return str_util_1.default.toHalfWidth(s).toLocaleLowerCase();
 }
 function _cache(novelStatJsonPath) {
-    return Bluebird.resolve().then(async function () {
-        let novelStatCache = await fs.readJSON(novelStatJsonPath)
+    return bluebird_1.default.resolve().then(async function () {
+        let novelStatCache = await fs_extra_1.default.readJSON(novelStatJsonPath)
             .then(loadNovelStatCache);
         let datamap = novelStatCache.filterNovel();
         let ret = Object.entries(datamap)

@@ -3,7 +3,7 @@
  */
 import { IFilterNovelData, NovelStatCache } from '@node-novel/cache-loader';
 import { OPDSV1 } from 'opds-extra';
-import Bluebird = require('bluebird');
+import Bluebird from 'bluebird';
 /**
  * build OPDS xml from node-novel novel-stat.json
  *

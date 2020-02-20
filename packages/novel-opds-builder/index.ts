@@ -17,11 +17,11 @@ import { slugify } from 'cjk-conv/lib/zh/table/list';
 import { OPDSV1 } from 'opds-extra';
 import { EnumLinkRel, EnumMIME } from 'opds-extra/lib/const';
 import { base64_qrcode } from './lib/const';
-import StrUtil = require('str-util');
-import Bluebird = require('bluebird');
-import fs = require('fs-extra');
+import StrUtil from 'str-util';
+import Bluebird from 'bluebird';
+import fs from 'fs-extra';
 
-import MIMETypes = require('mime-types');
+import MIMETypes from 'mime-types';
 
 /**
  * build OPDS xml from node-novel novel-stat.json
