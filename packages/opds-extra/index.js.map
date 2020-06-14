@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["index.ts"],"names":[],"mappings":";AAAA;;GAEG;;AAGH,mCAAoC;AAE3B,wBAAM;AAEf,kBAAe,OAAmC,CAAC","sourcesContent":["/**\n * Created by user on 2019/3/8.\n */\n\n\nimport OPDSV1 = require('./lib/v1');\n\nexport { OPDSV1 }\n\nexport default exports as typeof import('./index');\n"]}

@@ -1,0 +1,63 @@
+{
+  "name": "opds-extra",
+  "version": "3.0.8",
+  "description": "Library to parse/generate OPDS feed",
+  "keywords": [
+    "atom",
+    "book",
+    "ebook",
+    "epub",
+    "feed",
+    "json",
+    "node-novel",
+    "novel",
+    "opds",
+    "parse",
+    "stringify",
+    "toc",
+    "xml"
+  ],
+  "homepage": "https://github.com/bluelovers/node-opds#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/node-opds/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/node-opds.git"
+  },
+  "license": "Apache-2.0",
+  "author": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "coverage": "npx nyc yarn run test",
+    "lint": "npx eslint **/*.ts",
+    "ncu": "npx yarn-tool ncu -u",
+    "npm:publish": "npm publish",
+    "postpublish": "git commit -m \"chore(release): publish\" .",
+    "prepublish:lockfile": "npx sync-lockfile .",
+    "prepublishOnly": "yarn run ncu && yarn run sort-package-json && yarn run test",
+    "sort-package-json": "npx yarn-tool sort",
+    "test": "echo \"Error: no test specified\"",
+    "test:mocha": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\"",
+    "tsc:default": "tsc -p tsconfig.json",
+    "tsc:esm": "tsc -p tsconfig.esm.json"
+  },
+  "dependencies": {
+    "array-hyper-unique": "^1.1.0",
+    "lodash": "^4.17.15",
+    "r2-opds-js": "^1.0.21",
+    "reflect-metadata": "^0.1.13",
+    "sort-object-keys2": "^1.1.0",
+    "subjects-utils": "0.0.2",
+    "symbol.inspect": "^1.0.0",
+    "ta-json-x": "^2.5.2",
+    "xml-schema2": "2.3.0"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.149"
+  }
+}
