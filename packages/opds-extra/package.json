@@ -1,6 +1,6 @@
 {
   "name": "opds-extra",
-  "version": "3.0.8",
+  "version": "3.0.9",
   "description": "Library to parse/generate OPDS feed",
   "keywords": [
     "atom",
@@ -57,7 +57,6 @@
     "subjects-utils": "0.0.2",
     "symbol.inspect": "^1.0.1",
     "ta-json-x": "^2.5.2",
-    "xml-schema2": "3.0.0"
-  },
-  "devDependencies": {}
+    "xml-schema2": "^3.0.1"
+  }
 }
