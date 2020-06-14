@@ -1,37 +1,41 @@
 {
   "name": "xml-schema2",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "Library to generate/parse XML from JavaScript schemas",
   "keywords": [
     "atom",
     "schema",
     "xml"
   ],
-  "homepage": "https://github.com/bluelovers/xml-schema#readme",
+  "homepage": "https://github.com/bluelovers/ws-opds/tree/master/packages/xml-schema2#readme",
   "bugs": {
-    "url": "https://github.com/bluelovers/xml-schema/issues"
+    "url": "https://github.com/bluelovers/ws-opds/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/xml-schema.git"
+    "url": "git+https://github.com/bluelovers/ws-opds.git"
   },
   "license": "Apache-2.0",
   "author": "Samy Pessé <samypesse@gmail.com>",
-  "main": "lib/index.js",
+  "main": "index.js",
   "directories": {
     "lib": "lib",
     "test": "test"
   },
   "scripts": {
-    "test": "mocha --timeout 15000"
+    "test": "jest",
+    "npm:publish": "npm publish",
+    "npm:publish:lerna": "npx lerna publish --yes --bump patch",
+    "prepublish:lockfile": "npx sync-lockfile .",
+    "prepublishOnly": "yarn run test",
+    "postpublish_": "git commit -m \"chore(release): publish & git push & echo postpublish\" .",
+    "ncu": "npx yarn-tool ncu -u",
+    "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "xml-parser": "1.2.1",
-    "xmlbuilder": "11.0.0"
+    "xmlbuilder": "15.1.1"
   },
-  "devDependencies": {
-    "mocha": "6.0.2",
-    "should": "13.2.3"
-  }
+  "devDependencies": {}
 }
