@@ -2,7 +2,6 @@
  * Created by user on 2019/3/8.
  */
 import { IFilterNovelData, NovelStatCache } from '@node-novel/cache-loader';
-import { OPDSV1 } from 'opds-extra';
 import Bluebird from 'bluebird';
 /**
  * build OPDS xml from node-novel novel-stat.json
@@ -28,7 +27,7 @@ export declare function buildOPDS(novelStatJsonPath: string, outputOPDSPath: str
         };
         novelStatCache: NovelStatCache;
     };
-    feed: OPDSV1.Feed;
+    feed: import("opds-extra/lib/v1").Feed;
     xml: string;
 }>;
 export interface INovels2Row {

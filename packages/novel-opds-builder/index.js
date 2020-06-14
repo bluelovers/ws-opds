@@ -6,6 +6,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports._cache = exports.buildOPDS = void 0;
 const cache_loader_1 = require("@node-novel/cache-loader");
 const class_1 = require("node-novel-info/class");
 const array_hyper_unique_1 = require("array-hyper-unique");
@@ -112,6 +113,7 @@ function buildOPDS(novelStatJsonPath, outputOPDSPath) {
                             type,
                         });
                     }
+                    // @ts-ignore
                     let et = opds_extra_1.OPDSV1.Entry.deserialize({
                         title,
                         links,

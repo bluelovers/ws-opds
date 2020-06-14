@@ -3,37 +3,47 @@
   "version": "1.0.8",
   "private": false,
   "description": "build OPDS xml from node-novel novel-stat.json",
+  "keywords": [],
+  "homepage": "https://github.com/bluelovers/ws-opds/tree/master/packages/novel-opds-builder#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/ws-opds/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/ws-opds.git"
+  },
   "license": "ISC",
-  "author": "",
+  "author": "bluelovers",
   "main": "index.js",
   "directories": {
-    "test": "test"
+    "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "npm:publish": "npm publish",
+    "npm:publish:lerna": "npx lerna publish --yes --bump patch",
+    "prepublish:lockfile": "npx sync-lockfile .",
+    "prepublishOnly_": "yarn run ncu && yarn run sort-package-json && yarn run test",
+    "postpublish_": "git commit -m \"chore(release): publish & git push & echo postpublish\" .",
+    "ncu": "npx yarn-tool ncu -u",
+    "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
-    "@node-novel/cache-loader": "^1.0.15",
-    "array-hyper-unique": "^1.1.0",
+    "@node-novel/cache-loader": "^1.0.26",
+    "array-hyper-unique": "^1.1.2",
     "bluebird": "^3.7.2",
-    "cjk-conv": "^1.2.40",
-    "fs-extra": "^8.1.0",
+    "cjk-conv": "^1.2.84",
+    "fs-extra": "^9.0.1",
     "hash-sum": "^2.0.0",
-    "mime-types": "^2.1.26",
-    "moment": "^2.24.0",
-    "node-novel-info": "^3.0.0",
+    "mime-types": "^2.1.27",
+    "moment": "^2.26.0",
+    "node-novel-info": "^3.0.5",
     "opds-extra": "^3.0.8",
-    "regexp-cjk": "^3.3.10",
-    "str-util": "^2.3.21",
-    "uni-string": "^1.1.2"
+    "regexp-cjk": "^3.3.50",
+    "str-util": "^2.3.23",
+    "uni-string": "^1.1.9"
   },
-  "devDependencies": {
-    "@bluelovers/tsconfig": "^1.0.17",
-    "@types/bluebird": "^3.5.29",
-    "@types/fs-extra": "^8.1.0",
-    "@types/hash-sum": "^1.0.0",
-    "@types/mime-types": "^2.1.0"
-  },
+  "devDependencies": {},
   "publishConfig": {
     "access": "public"
   }

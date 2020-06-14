@@ -154,6 +154,7 @@ export function buildOPDS(novelStatJsonPath: string, outputOPDSPath: string)
 							});
 						}
 
+						// @ts-ignore
 						let et = OPDSV1.Entry.deserialize<OPDSV1.Entry>({
 							title,
 							links,
