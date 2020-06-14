@@ -2,7 +2,17 @@
  * Created by user on 2019/3/7.
  */
 
-import { IParseOptions, JsonElementType, JsonObject, JsonProperty, JsonWriteonly, TaJson, BeforeDeserialized, OnDeserialized, JsonConstructor } from "ta-json-x";
+import {
+	IParseOptions,
+	JsonElementType,
+	JsonObject,
+	JsonProperty,
+	JsonWriteonly,
+	TaJson,
+	BeforeDeserialized,
+	OnDeserialized,
+	JsonConstructor,
+} from "ta-json-x";
 import util = require('util');
 import "reflect-metadata";
 import SymbolInspect = require('symbol.inspect');
@@ -29,7 +39,8 @@ export namespace Schema
 		}
 
 		@BeforeDeserialized()
-		protected BeforeDeserialized(...argv){};
+		protected BeforeDeserialized(...argv)
+		{};
 
 		stringify(pretty?: boolean | string): string
 		{
@@ -55,12 +66,12 @@ export namespace Schema
 		static deserialize<T extends Base, J extends Base.TSTYPE | Partial<T>>(json: J, options?: IParseOptions): T & Base
 		static deserialize<T extends Base, J extends Base.TSTYPE | Partial<T>>(json: J, options?: IParseOptions): T & Base
 		{
-			return TaJson.deserialize<T>(json, this, options) as any;
+			return TaJson.deserialize<T>(json, this as any, options) as any;
 		}
 
 		static parse<T extends Base>(json: string, options?: IParseOptions): T
 		{
-			return TaJson.parse<T>(json, this, options)
+			return TaJson.parse<T>(json, this as any, options)
 		}
 
 		_isvaild(): boolean

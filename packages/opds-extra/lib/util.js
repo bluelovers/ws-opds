@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.getOPDSRel = exports.hrefURL = exports.typedOrObjectList = void 0;
 const const_1 = require("./const");
 const array_hyper_unique_1 = require("array-hyper-unique");
 function typedOrObjectList(inputList, typeA, typeB) {

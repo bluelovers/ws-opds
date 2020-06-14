@@ -65,3 +65,16 @@ tsconfig.esm.json.tpl
 .mocharc.yml
 jest.config.js
 jest.config.*
+/report.*.json
+now.json
+/Makefile
+*.spec.d.ts
+*.spec.js
+*.spec.ts
+*.spec.tsx
+__mocks__
+__tests__
+__snapshots__
+*.snap
+npm-shrinkwrap.json
+/example/

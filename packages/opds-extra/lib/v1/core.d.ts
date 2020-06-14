@@ -2,7 +2,7 @@ import { IParseOptions } from 'ta-json-x';
 import { Schema } from '../class';
 import '../debug';
 import { EnumEntryContent, EnumLinkRel, EnumMIME, EnumPriceCurrencyCode } from '../const';
-import moment = require("moment");
+import moment from "moment";
 export declare class Price extends Schema.Base<Price.TSTYPE> {
     currencycode: string | EnumPriceCurrencyCode;
     value: number;

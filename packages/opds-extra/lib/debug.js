@@ -1,7 +1,8 @@
 /**
  * Created by user on 2019/3/7.
  */
-if (process.env && process.env.NODE_ENV !== 'production') {
+var _a;
+if (((_a = process === null || process === void 0 ? void 0 : process.env) === null || _a === void 0 ? void 0 : _a.NODE_ENV) !== 'production') {
     const SymbolInspect = require('symbol.inspect');
     const util = require('util');
     const moment = require("moment");

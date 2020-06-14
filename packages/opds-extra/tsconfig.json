@@ -1,7 +1,0 @@
-{
-  "extends": "@bluelovers/tsconfig/sourcemap/mapfile.json",
-  "compilerOptions": {
-    "strictBindCallApply": true,
-    "emitDecoratorMetadata": true
-  }
-}

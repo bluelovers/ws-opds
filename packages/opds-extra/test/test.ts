@@ -1,9 +1,10 @@
 import { OPDSV1 } from '../';
-import { Feed } from '../lib/v1/core/Feed';
+import { Feed } from '../lib/v1/core';
 
-const SymbolInspect = require('symbol.inspect');
-const util = require('util');
-const moment = require("moment");
+import SymbolInspect from 'symbol.inspect';
+
+import util from 'util';
+import moment from "moment";
 
 util.inspect.defaultOptions.colors = true;
 util.inspect.defaultOptions.showHidden = true;
@@ -113,7 +114,7 @@ let k = Feed.deserialize({
 				{
 					code: '7777777',
 					label: '8888',
-				}
+				},
 			],
 			content: {
 				type: 'text',

@@ -1,11 +1,8 @@
-import _ = require("lodash");
-import XMLSchema = require("xml-schema2");
-import subjects = require("subjects-utils");
-
-import schemas = require('./schemas');
+import XMLSchema from "xml-schema2";
+import FEED from './schemas';
 import { Feed } from './core';
 
-const opdsSchema = new XMLSchema(schemas.FEED);
+const opdsSchema = new XMLSchema(FEED);
 
 // Create an opds feed
 export function create(feed: Feed.TSTYPE): string
@@ -22,3 +19,5 @@ export function parse(xml: string)
 {
 	return opdsSchema.parse(xml);
 }
+
+export default exports as typeof import('./xml')

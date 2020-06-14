@@ -1,14 +1,15 @@
 import { EnumLinkRel } from '../const';
 import { getOPDSRel } from '../util';
+import { ISchema } from 'xml-schema2/lib/types';
 
-const DATE = {
-	transform: function (d)
+export const DATE: ISchema = {
+	transform(d: number | string | Date)
 	{
 		return (new Date(d)).toISOString();
 	},
 };
 
-const AUTHOR = {
+export const AUTHOR: ISchema = {
 	tag: 'author',
 	array: true,
 	fields: {
@@ -21,7 +22,7 @@ const AUTHOR = {
 	},
 };
 
-const PRICE = {
+export const PRICE: ISchema = {
 	tag: 'opds:price',
 	inner: 'value',
 	attributes: {
@@ -32,7 +33,7 @@ const PRICE = {
 	},
 };
 
-const LINK = {
+export const LINK: ISchema = {
 	tag: 'link',
 	array: true,
 	attributes: {
@@ -57,7 +58,7 @@ const LINK = {
 	},
 };
 
-const CATEGORY = {
+export const CATEGORY: ISchema = {
 	tag: 'category',
 	array: true,
 	attributes: {
@@ -74,7 +75,7 @@ const CATEGORY = {
 	},
 };
 
-const CONTENT_BASE = {
+export const CONTENT_BASE: ISchema = {
 	inner: 'value',
 	cdata: true,
 	raw: true,
@@ -102,12 +103,12 @@ const CONTENT_BASE = {
 	},
 };
 
-const CONTENT = {
+export const CONTENT: ISchema = {
 	...CONTENT_BASE,
 	tag: 'content',
 };
 
-const ENTRY = {
+export const ENTRY: ISchema = {
 	tag: 'entry',
 	array: true,
 	fields: {
@@ -131,7 +132,7 @@ const ENTRY = {
 		categories: CATEGORY,
 		issued: {
 			tag: "dc:issued",
-			transform: function (d)
+			transform(d: Date)
 			{
 				return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
 			},
@@ -150,7 +151,7 @@ const ENTRY = {
 	},
 };
 
-export const FEED = {
+export const FEED: ISchema = {
 	tag: 'feed',
 	attributes: {
 		xmlns: {

@@ -3,6 +3,7 @@
  * Created by user on 2019/3/8.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.EnumPriceCurrencyCode = exports.EnumMIME = exports.EnumLinkRel = exports.EnumEntryContent = exports.REL_BASE_URL = void 0;
 exports.REL_BASE_URL = 'http://opds-spec.org/';
 var EnumEntryContent;
 (function (EnumEntryContent) {

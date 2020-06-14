@@ -3,8 +3,8 @@ import { Schema } from '../class';
 import '../debug';
 import { EnumEntryContent, EnumLinkRel, EnumMIME, EnumPriceCurrencyCode, REL_BASE_URL } from '../const';
 import { getOPDSRel, hrefURL, typedOrObjectList } from '../util';
-import moment = require("moment");
-import xml = require("./xml");
+import moment from "moment";
+import xml from "./xml";
 
 // @ts-ignore
 export class Price extends Schema.Base<Price.TSTYPE>
@@ -170,7 +170,8 @@ export class Author extends Schema.Base<Author.TSTYPE>
 
 			if (u._isvaild())
 			{
-				Object.keys(u).forEach(k => {
+				Object.keys(u).forEach(k =>
+				{
 					this[k] = u[k];
 				})
 			}

@@ -8,14 +8,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Feed = exports.Entry = exports.EntryCategory = exports.EntryContent = exports.Author = exports.Link = exports.Price = void 0;
 const ta_json_x_1 = require("ta-json-x");
 const class_1 = require("../class");
 require("../debug");
 const const_1 = require("../const");
 const util_1 = require("../util");
-const moment = require("moment");
-const xml = require("./xml");
+const moment_1 = __importDefault(require("moment"));
+const xml_1 = __importDefault(require("./xml"));
 // @ts-ignore
 class Price extends class_1.Schema.Base {
 }
@@ -191,7 +195,7 @@ class Entry extends class_1.Schema.Base {
         }
     }
     set updated(_updated) {
-        this._updated = moment.isMoment(_updated) ? _updated : moment(_updated);
+        this._updated = moment_1.default.isMoment(_updated) ? _updated : moment_1.default(_updated);
     }
     get published() {
         if (this._published) {
@@ -199,7 +203,7 @@ class Entry extends class_1.Schema.Base {
         }
     }
     set published(_updated) {
-        this._published = moment.isMoment(_updated) ? _updated : moment(_updated);
+        this._published = moment_1.default.isMoment(_updated) ? _updated : moment_1.default(_updated);
     }
     get issued() {
         if (this._issued) {
@@ -207,7 +211,7 @@ class Entry extends class_1.Schema.Base {
         }
     }
     set issued(_updated) {
-        this._issued = moment.isMoment(_updated) ? _updated : moment(_updated);
+        this._issued = moment_1.default.isMoment(_updated) ? _updated : moment_1.default(_updated);
     }
     get categories() {
         if (Array.isArray(this._categories) && this._categories.length) {
@@ -322,13 +326,13 @@ exports.Entry = Entry;
 // @ts-ignore
 class Feed extends class_1.Schema.Base {
     BeforeDeserialized() {
-        this._updated = moment();
+        this._updated = moment_1.default();
     }
     get updated() {
         return (this._updated).toDate();
     }
     set updated(_updated) {
-        this._updated = moment.isMoment(_updated) ? _updated : moment(_updated);
+        this._updated = moment_1.default.isMoment(_updated) ? _updated : moment_1.default(_updated);
     }
     addAuthor(value) {
         let u = new Author(value);
@@ -339,10 +343,10 @@ class Feed extends class_1.Schema.Base {
         }
     }
     toXML() {
-        return xml.create(this.serialize());
+        return xml_1.default.create(this.serialize());
     }
     static parseXML(data) {
-        return this.deserialize(xml.parse(data));
+        return this.deserialize(xml_1.default.parse(data));
     }
     static deserialize(json, options) {
         // @ts-ignore

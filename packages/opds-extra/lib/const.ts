@@ -77,7 +77,8 @@ export enum EnumLinkRel
 	CRAWLABLE = 'http://opds-spec.org/crawlable',
 }
 
-Object.keys(EnumLinkRel).forEach(k => {
+Object.keys(EnumLinkRel).forEach(k =>
+{
 
 	let lc = k.toLowerCase();
 

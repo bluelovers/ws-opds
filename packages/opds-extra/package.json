@@ -17,16 +17,16 @@
     "toc",
     "xml"
   ],
-  "homepage": "https://github.com/bluelovers/node-opds#readme",
+  "homepage": "https://github.com/bluelovers/ws-opds/tree/master/packages/opds-extra#readme",
   "bugs": {
-    "url": "https://github.com/bluelovers/node-opds/issues"
+    "url": "https://github.com/bluelovers/ws-opds/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bluelovers/node-opds.git"
+    "url": "git+https://github.com/bluelovers/ws-opds.git"
   },
   "license": "Apache-2.0",
-  "author": "",
+  "author": "bluelovers",
   "main": "index.js",
   "directories": {
     "lib": "lib",
@@ -35,29 +35,29 @@
   "scripts": {
     "coverage": "npx nyc yarn run test",
     "lint": "npx eslint **/*.ts",
-    "ncu": "npx yarn-tool ncu -u",
-    "npm:publish": "npm publish",
-    "postpublish": "git commit -m \"chore(release): publish\" .",
-    "prepublish:lockfile": "npx sync-lockfile .",
-    "prepublishOnly": "yarn run ncu && yarn run sort-package-json && yarn run test",
-    "sort-package-json": "npx yarn-tool sort",
     "test": "echo \"Error: no test specified\"",
     "test:mocha": "npx mocha --require ts-node/register \"!(node_modules)/**/*.{test,spec}.{ts,tsx}\"",
+    "npm:publish": "npm publish",
+    "npm:publish:lerna": "npx lerna publish --yes --bump patch",
+    "prepublish:lockfile": "npx sync-lockfile .",
+    "prepublishOnly": "yarn run test",
+    "postpublish": "git commit -m \"chore(release): publish\" .",
+    "postpublish_": "git commit -m \"chore(release): publish & git push & echo postpublish\" .",
+    "ncu": "npx yarn-tool ncu -u",
+    "sort-package-json": "npx yarn-tool sort",
     "tsc:default": "tsc -p tsconfig.json",
     "tsc:esm": "tsc -p tsconfig.esm.json"
   },
   "dependencies": {
-    "array-hyper-unique": "^1.1.0",
+    "array-hyper-unique": "^1.1.2",
     "lodash": "^4.17.15",
-    "r2-opds-js": "^1.0.21",
+    "r2-opds-js": "^1.0.25",
     "reflect-metadata": "^0.1.13",
-    "sort-object-keys2": "^1.1.0",
+    "sort-object-keys2": "^2.0.3",
     "subjects-utils": "0.0.2",
-    "symbol.inspect": "^1.0.0",
+    "symbol.inspect": "^1.0.1",
     "ta-json-x": "^2.5.2",
-    "xml-schema2": "2.3.0"
+    "xml-schema2": "3.0.0"
   },
-  "devDependencies": {
-    "@types/lodash": "^4.14.149"
-  }
+  "devDependencies": {}
 }

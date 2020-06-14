@@ -1,5 +1,5 @@
-import opds = require("..");
-import fs = require("fs");
+import opds from "../lib/v1/xml";
+import { outputFileSync } from "fs-extra";
 
 let xml = opds.create({
 	title: "My Catalog",
@@ -96,5 +96,5 @@ let xml2 = opds.create(data);
 
 console.log(xml2 === xml);
 
-fs.writeFileSync('./temp/xml1.xml', xml);
-fs.writeFileSync('./temp/xml2.xml', xml2);
+outputFileSync('./temp/xml1.xml', xml);
+outputFileSync('./temp/xml2.xml', xml2);

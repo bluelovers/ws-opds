@@ -1,12 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.FEED = exports.ENTRY = exports.CONTENT = exports.CONTENT_BASE = exports.CATEGORY = exports.LINK = exports.PRICE = exports.AUTHOR = exports.DATE = void 0;
 const util_1 = require("../util");
-const DATE = {
-    transform: function (d) {
+exports.DATE = {
+    transform(d) {
         return (new Date(d)).toISOString();
     },
 };
-const AUTHOR = {
+exports.AUTHOR = {
     tag: 'author',
     array: true,
     fields: {
@@ -18,7 +19,7 @@ const AUTHOR = {
         to: 'name',
     },
 };
-const PRICE = {
+exports.PRICE = {
     tag: 'opds:price',
     inner: 'value',
     attributes: {
@@ -28,7 +29,7 @@ const PRICE = {
         to: 'value',
     },
 };
-const LINK = {
+exports.LINK = {
     tag: 'link',
     array: true,
     attributes: {
@@ -43,13 +44,13 @@ const LINK = {
         type: {},
     },
     fields: {
-        price: PRICE,
+        price: exports.PRICE,
     },
     map: {
         href: 'name',
     },
 };
-const CATEGORY = {
+exports.CATEGORY = {
     tag: 'category',
     array: true,
     attributes: {
@@ -65,7 +66,7 @@ const CATEGORY = {
         to: 'code',
     },
 };
-const CONTENT_BASE = {
+exports.CONTENT_BASE = {
     inner: 'value',
     cdata: true,
     raw: true,
@@ -92,11 +93,11 @@ const CONTENT_BASE = {
         to: 'value',
     },
 };
-const CONTENT = {
-    ...CONTENT_BASE,
+exports.CONTENT = {
+    ...exports.CONTENT_BASE,
     tag: 'content',
 };
-const ENTRY = {
+exports.ENTRY = {
     tag: 'entry',
     array: true,
     fields: {
@@ -104,23 +105,23 @@ const ENTRY = {
         title: {},
         subtitle: {},
         published: {
-            ...DATE,
+            ...exports.DATE,
             tag: 'published',
         },
         updated: {
-            ...DATE,
+            ...exports.DATE,
             tag: 'updated',
         },
         summary: {
-            ...CONTENT_BASE,
+            ...exports.CONTENT_BASE,
             tag: 'summary',
         },
-        links: LINK,
-        authors: AUTHOR,
-        categories: CATEGORY,
+        links: exports.LINK,
+        authors: exports.AUTHOR,
+        categories: exports.CATEGORY,
         issued: {
             tag: "dc:issued",
-            transform: function (d) {
+            transform(d) {
                 return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
             },
         },
@@ -131,7 +132,7 @@ const ENTRY = {
             tag: "dc:language",
         },
         rights: {},
-        content: CONTENT,
+        content: exports.CONTENT,
         identifier: {
             tag: "dc:identifier",
         },
@@ -158,10 +159,10 @@ exports.FEED = {
         subtitle: {},
         icon: {},
         logo: {},
-        updated: DATE,
-        links: LINK,
-        authors: AUTHOR,
-        books: ENTRY,
+        updated: exports.DATE,
+        links: exports.LINK,
+        authors: exports.AUTHOR,
+        books: exports.ENTRY,
     },
 };
 exports.default = exports.FEED;

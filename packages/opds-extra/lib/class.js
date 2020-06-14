@@ -12,6 +12,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Schema = void 0;
 const ta_json_x_1 = require("ta-json-x");
 require("reflect-metadata");
 var Schema;
