@@ -58,5 +58,6 @@
     "symbol.inspect": "^1.0.1",
     "ta-json-x": "^2.5.2",
     "xml-schema2": "^3.0.1"
-  }
+  },
+  "gitHead": "e3f9d628084d487a8ccb51a1cf09c1f93e1df8b3"
 }
