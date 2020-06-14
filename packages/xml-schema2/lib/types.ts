@@ -16,14 +16,18 @@ export interface ISchema
 {
 	name?: '$' | string
 
-	transform?<T, R = T>(value: T): R
-	untransform?<T, R = T>(value: T): R
+	transform?<T, R>(value: T): R
+	transform?<R>(value: any): R
+
+	untransform?<T, R>(value: T): R
+	untransform?<R>(value: any): R
 
 	attributes?: Record<'$' | string, ISchema>
 	fields?: Record<'$' | string, ISchema>
 
 	map?: {
 		to?,
+		href?
 	},
 
 	value?
