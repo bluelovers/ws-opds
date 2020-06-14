@@ -1,0 +1,37 @@
+{
+  "name": "xml-schema2",
+  "version": "2.3.0",
+  "description": "Library to generate/parse XML from JavaScript schemas",
+  "keywords": [
+    "atom",
+    "schema",
+    "xml"
+  ],
+  "homepage": "https://github.com/bluelovers/xml-schema#readme",
+  "bugs": {
+    "url": "https://github.com/bluelovers/xml-schema/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bluelovers/xml-schema.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Samy Pessé <samypesse@gmail.com>",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha --timeout 15000"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "xml-parser": "1.2.1",
+    "xmlbuilder": "11.0.0"
+  },
+  "devDependencies": {
+    "mocha": "6.0.2",
+    "should": "13.2.3"
+  }
+}
