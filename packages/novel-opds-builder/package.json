@@ -1,6 +1,6 @@
 {
   "name": "@node-novel/opds-builder",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "private": false,
   "description": "build OPDS xml from node-novel novel-stat.json",
   "keywords": [],
@@ -38,7 +38,7 @@
     "mime-types": "^2.1.31",
     "moment": "^2.29.1",
     "node-novel-info": "^3.0.14",
-    "opds-extra": "^3.0.9",
+    "opds-extra": "^3.0.10",
     "regexp-cjk": "^3.3.94",
     "str-util": "^2.3.27",
     "tslib": "^2.3.0",

@@ -1,6 +1,6 @@
 {
   "name": "xml-schema2",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Library to generate/parse XML from JavaScript schemas",
   "keywords": [
     "atom",

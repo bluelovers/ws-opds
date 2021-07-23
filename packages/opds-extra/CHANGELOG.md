@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.10](https://github.com/bluelovers/ws-opds/compare/opds-extra@3.0.9...opds-extra@3.0.10) (2021-07-23)
+
+
+### ♻️　Chores
+
+* **release:** publish ([7f683ba](https://github.com/bluelovers/ws-opds/commit/7f683bae3a6390abf8ac48b998baf9eaddd3547f))
+
+
+### 🔖　Miscellaneous
+
+* . ([58ae2f8](https://github.com/bluelovers/ws-opds/commit/58ae2f8254f85992414b3bd922bb30031b4bb493))
+
+
+
+
+
 ## 3.0.9 (2020-06-14)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.2](https://github.com/bluelovers/ws-opds/compare/xml-schema2@3.0.1...xml-schema2@3.0.2) (2021-07-23)
+
+
+### 🔖　Miscellaneous
+
+* . ([58ae2f8](https://github.com/bluelovers/ws-opds/commit/58ae2f8254f85992414b3bd922bb30031b4bb493))
+
+
+
+
+
 ## 3.0.1 (2020-06-14)
 
 
