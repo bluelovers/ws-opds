@@ -33,7 +33,8 @@
     "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
+    "tslib": "^2.3.0",
     "xml-parser": "1.2.1",
     "xmlbuilder": "15.1.1"
   }

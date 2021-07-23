@@ -6,5 +6,5 @@ import { Feed } from './core';
 export declare const parseXML: typeof Feed.parseXML;
 export declare const parseJSON: typeof Feed.parseJSON;
 export declare const parseJSONObject: typeof Feed.deserialize;
-declare const _default: typeof import(".");
+declare const _default: typeof import("./index");
 export default _default;

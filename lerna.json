@@ -4,6 +4,7 @@
   ],
   "command": {
     "publish": {
+      "loglevel": "silly",
       "ignoreChanges": [
         "**/node_modules/**",
         "**/__snapshots__/**",
@@ -18,17 +19,17 @@
       "message": "chore(release): publish",
       "bump": "patch",
       "conventionalCommits": true,
-      "conventionalGraduate": false
+      "conventionalGraduate": true
+    },
+    "version": {
+      "conventionalCommits": true,
+      "changelogPreset": "@bluelovers/conventional-changelog-bluelovers"
     },
     "run": {
       "stream": true
     },
     "exec": {
       "stream": true
-    },
-    "version": {
-      "conventionalCommits": true,
-      "changelogPreset": "emojis"
     }
   },
   "npmClient": "yarn",

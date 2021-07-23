@@ -1,11 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.parse = exports.create = void 0;
-const xml_schema2_1 = __importDefault(require("xml-schema2"));
-const schemas_1 = __importDefault(require("./schemas"));
+const tslib_1 = require("tslib");
+const xml_schema2_1 = (0, tslib_1.__importDefault)(require("xml-schema2"));
+const schemas_1 = (0, tslib_1.__importDefault)(require("./schemas"));
 const opdsSchema = new xml_schema2_1.default(schemas_1.default);
 // Create an opds feed
 function create(feed) {

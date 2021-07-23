@@ -28,7 +28,7 @@ function typedOrObjectList(inputList, typeA, typeB) {
             }
             return a;
         }, []);
-        array_hyper_unique_1.array_unique_overwrite(arr);
+        (0, array_hyper_unique_1.array_unique_overwrite)(arr);
         return arr;
     }
 }

@@ -74,15 +74,15 @@ export function applySchema(el: XMLElement, schema: ISchema, value)
 	{
 		if (isCDATA)
 		{
-			el.dat(innerValue);
+			el.dat(innerValue as any);
 		}
 		else if (isRaw)
 		{
-			el.raw(innerValue);
+			el.raw(innerValue as any);
 		}
 		else
 		{
-			el.txt(innerValue);
+			el.txt(innerValue as any);
 		}
 	}
 

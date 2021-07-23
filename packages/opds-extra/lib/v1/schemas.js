@@ -37,7 +37,7 @@ exports.LINK = {
         title: {},
         rel: {
             transform(v) {
-                return util_1.getOPDSRel(v);
+                return (0, util_1.getOPDSRel)(v);
                 //return new URL(v, "http://opds-spec.org/").href;
             },
         },
@@ -45,6 +45,7 @@ exports.LINK = {
     },
     fields: {
         price: exports.PRICE,
+        //prices: PRICE,
     },
     map: {
         href: 'name',

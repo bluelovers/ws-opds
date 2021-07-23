@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.parseJSONObject = exports.parseJSON = exports.parseXML = void 0;
+exports.parseJSONObject = exports.parseJSON = exports.parseXML = exports.EntryContent = exports.EntryCategory = exports.Price = exports.Author = exports.Link = exports.Entry = exports.Feed = void 0;
 /**
  * Created by user on 2019/3/8.
  */

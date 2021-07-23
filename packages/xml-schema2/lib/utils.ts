@@ -1,7 +1,7 @@
 import { identity, defaults, isString, isNumber, isBoolean } from 'lodash';
 import { ISchema } from './types';
 
-export function isBasicValue(val)
+export function isBasicValue(val): val is string | number | boolean
 {
 	return isString(val) || isNumber(val) || isBoolean(val);
 }

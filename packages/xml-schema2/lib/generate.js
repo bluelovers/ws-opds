@@ -14,10 +14,10 @@ function createElement(feed, schema, value) {
 exports.createElement = createElement;
 // Apply an attribute-schema to an element
 function createAttr(el, schema, value) {
-    schema = utils_1.defaultAttribute(schema || {});
+    schema = (0, utils_1.defaultAttribute)(schema || {});
     // Apply default value
     if (schema.default !== undefined) {
-        value = lodash_1.isPlainObject(value) ? lodash_1.defaults(value, schema.default || {}) : (value || schema.default);
+        value = (0, lodash_1.isPlainObject)(value) ? (0, lodash_1.defaults)(value, schema.default || {}) : (value || schema.default);
     }
     if (value == null)
         return;
@@ -30,31 +30,31 @@ exports.createAttr = createAttr;
 // Apply a schema to an existing element
 function applySchema(el, schema, value) {
     var innerValue;
-    schema = utils_1.defaultSchema(schema || {});
+    schema = (0, utils_1.defaultSchema)(schema || {});
     // Apply default value
     if (schema.default !== undefined) {
-        value = lodash_1.isPlainObject(value) ? lodash_1.defaults(value, schema.default || {}) : (value || schema.default);
+        value = (0, lodash_1.isPlainObject)(value) ? (0, lodash_1.defaults)(value, schema.default || {}) : (value || schema.default);
     }
     if (value == null) {
         el.remove();
         return;
     }
     // Map value
-    if (schema.map.to && utils_1.isBasicValue(value)) {
-        value = lodash_1.fromPairs([[schema.map.to, value]]);
+    if (schema.map.to && (0, utils_1.isBasicValue)(value)) {
+        value = (0, lodash_1.fromPairs)([[schema.map.to, value]]);
     }
     // Transform value
     value = schema.transform(value);
     innerValue = value;
     schema.value = value;
-    var isText = lodash_1.result(schema, 'text', true);
-    var isRaw = lodash_1.result(schema, 'raw', false);
-    var isCDATA = lodash_1.result(schema, 'cdata', false);
+    var isText = (0, lodash_1.result)(schema, 'text', true);
+    var isRaw = (0, lodash_1.result)(schema, 'raw', false);
+    var isCDATA = (0, lodash_1.result)(schema, 'cdata', false);
     // Extract inner value
     if (schema.inner)
-        innerValue = lodash_1.get(innerValue, schema.inner);
+        innerValue = (0, lodash_1.get)(innerValue, schema.inner);
     // Add value if string or number
-    if (isText && utils_1.isBasicValue(innerValue)) {
+    if (isText && (0, utils_1.isBasicValue)(innerValue)) {
         if (isCDATA) {
             el.dat(innerValue);
         }
@@ -66,22 +66,22 @@ function applySchema(el, schema, value) {
         }
     }
     // Apply attributes
-    lodash_1.each(schema.attributes, function (attr, key) {
-        var val = lodash_1.get(value, key);
-        createAttr(el, lodash_1.defaults(attr, {
+    (0, lodash_1.each)(schema.attributes, function (attr, key) {
+        var val = (0, lodash_1.get)(value, key);
+        createAttr(el, (0, lodash_1.defaults)(attr, {
             name: key,
         }), val);
     });
     // Apply sub-fields
-    lodash_1.each(schema.fields, function (field, key) {
+    (0, lodash_1.each)(schema.fields, function (field, key) {
         // Extract value to use for the field
-        var val = key == '$' ? value : lodash_1.get(value, key);
+        var val = key == '$' ? value : (0, lodash_1.get)(value, key);
         // Create new element and handle arrays
-        if (lodash_1.isArray(val)) {
-            lodash_1.each(val, lodash_1.partial(createElement, el, field));
+        if ((0, lodash_1.isArray)(val)) {
+            (0, lodash_1.each)(val, (0, lodash_1.partial)(createElement, el, field));
         }
         else {
-            createElement(el, lodash_1.defaults(field, {
+            createElement(el, (0, lodash_1.defaults)(field, {
                 tag: key,
             }), val);
         }

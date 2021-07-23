@@ -12,7 +12,7 @@ import {
 import { NodeNovelInfo } from 'node-novel-info/class'
 
 import { array_unique, array_unique_overwrite } from 'array-hyper-unique'
-import { slugify } from 'cjk-conv/lib/zh/table/list';
+import { slugify } from '@lazy-cjk/zh-slugify';
 
 import { OPDSV1 } from 'opds-extra';
 import { EnumLinkRel, EnumMIME } from 'opds-extra/lib/const';

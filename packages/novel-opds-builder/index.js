@@ -2,22 +2,20 @@
 /**
  * Created by user on 2019/3/8.
  */
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports._cache = exports.buildOPDS = void 0;
+const tslib_1 = require("tslib");
 const cache_loader_1 = require("@node-novel/cache-loader");
 const class_1 = require("node-novel-info/class");
 const array_hyper_unique_1 = require("array-hyper-unique");
-const list_1 = require("cjk-conv/lib/zh/table/list");
+const zh_slugify_1 = require("@lazy-cjk/zh-slugify");
 const opds_extra_1 = require("opds-extra");
 const const_1 = require("opds-extra/lib/const");
 const const_2 = require("./lib/const");
-const str_util_1 = __importDefault(require("str-util"));
-const bluebird_1 = __importDefault(require("bluebird"));
-const fs_extra_1 = __importDefault(require("fs-extra"));
-const mime_types_1 = __importDefault(require("mime-types"));
+const str_util_1 = (0, tslib_1.__importDefault)(require("str-util"));
+const bluebird_1 = (0, tslib_1.__importDefault)(require("bluebird"));
+const fs_extra_1 = (0, tslib_1.__importDefault)(require("fs-extra"));
+const mime_types_1 = (0, tslib_1.__importDefault)(require("mime-types"));
 /**
  * build OPDS xml from node-novel novel-stat.json
  *
@@ -135,7 +133,7 @@ function buildOPDS(novelStatJsonPath, outputOPDSPath) {
 }
 exports.buildOPDS = buildOPDS;
 function loadNovelStatCache(json) {
-    return cache_loader_1.createFromJSON(json, {
+    return (0, cache_loader_1.createFromJSON)(json, {
         readonly: true,
     });
 }
@@ -154,7 +152,7 @@ function _cache(novelStatJsonPath) {
                 .forEach(function ([novelID, novel]) {
                 novel.cache = novel.cache || {};
                 // @ts-ignore
-                novel.epub_date = novel.cache.epub_date && cache_loader_1.createMoment(novel.cache.epub_date)
+                novel.epub_date = novel.cache.epub_date && (0, cache_loader_1.createMoment)(novel.cache.epub_date)
                     .startOf('day')
                     .valueOf() || 0;
                 // @ts-ignore
@@ -164,13 +162,13 @@ function _cache(novelStatJsonPath) {
                 });
                 // @ts-ignore
                 novel.title = metaInfo.title(novelID);
-                let ks = array_hyper_unique_1.array_unique([
+                let ks = (0, array_hyper_unique_1.array_unique)([
                     novelID,
                     ...metaInfo.titles(),
                     ...metaInfo.series_titles(),
                 ].reduce((a, v) => {
                     a.push(toHalfWidthLocaleLowerCase(v));
-                    a.push(toHalfWidthLocaleLowerCase(list_1.slugify(v, true)));
+                    a.push(toHalfWidthLocaleLowerCase((0, zh_slugify_1.slugify)(v, true)));
                     return a;
                 }, []).filter(v => v));
                 ks
@@ -178,7 +176,7 @@ function _cache(novelStatJsonPath) {
                     data.alias[title] = data.alias[title] || [];
                     data.alias[title].push(novel);
                 });
-                let alllist = array_hyper_unique_1.array_unique(array_hyper_unique_1.array_unique(ks.map(title => data.alias[title])).reduce((ls, list) => {
+                let alllist = (0, array_hyper_unique_1.array_unique)((0, array_hyper_unique_1.array_unique)(ks.map(title => data.alias[title])).reduce((ls, list) => {
                     ls.push(...list);
                     return ls;
                 }, []));
@@ -206,7 +204,7 @@ function _cache(novelStatJsonPath) {
         ret.novels = ret.novels.sort(function (a, b) {
             return b.epub_date - a.epub_date;
         });
-        ret.novels2 = array_hyper_unique_1.array_unique(Object.values(ret.alias))
+        ret.novels2 = (0, array_hyper_unique_1.array_unique)(Object.values(ret.alias))
             .reduce(function (a, ls) {
             ls = ls
                 .filter(v => v.cache.chapter)
@@ -230,8 +228,8 @@ function _cache(novelStatJsonPath) {
                     titles.push(...metaInfo.titles());
                     authors.push(...metaInfo.authors());
                 });
-                array_hyper_unique_1.array_unique_overwrite(titles);
-                array_hyper_unique_1.array_unique_overwrite(authors);
+                (0, array_hyper_unique_1.array_unique_overwrite)(titles);
+                (0, array_hyper_unique_1.array_unique_overwrite)(authors);
                 a.push({
                     title,
                     titles,

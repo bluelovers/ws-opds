@@ -49,14 +49,15 @@
     "tsc:esm": "tsc -p tsconfig.esm.json"
   },
   "dependencies": {
-    "array-hyper-unique": "^1.1.2",
-    "lodash": "^4.17.15",
-    "r2-opds-js": "^1.0.25",
+    "array-hyper-unique": "^1.1.10",
+    "lodash": "^4.17.21",
+    "r2-opds-js": "^1.0.35",
     "reflect-metadata": "^0.1.13",
     "sort-object-keys2": "^2.0.3",
     "subjects-utils": "0.0.2",
     "symbol.inspect": "^1.0.1",
-    "ta-json-x": "^2.5.2",
+    "ta-json-x": "^2.5.3",
+    "tslib": "^2.3.0",
     "xml-schema2": "^3.0.1"
   },
   "gitHead": "e3f9d628084d487a8ccb51a1cf09c1f93e1df8b3"

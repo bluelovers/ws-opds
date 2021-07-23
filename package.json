@@ -18,23 +18,24 @@
     "sort-package-json:ws": "npx yarn-tool ws exec yarn-tool sort"
   },
   "resolutions": {},
+  "dependencies": {
+    "fs-extra": "^10.0.0",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.4",
+    "tslib": "^2.3.0"
+  },
   "devDependencies": {
-    "@bluelovers/tsconfig": "^1.0.19",
-    "@types/bluebird": "^3.5.32",
-    "@types/fs-extra": "^9.0.1",
+    "@bluelovers/tsconfig": "^1.0.25",
+    "@types/bluebird": "^3.5.36",
+    "@types/fs-extra": "^9.0.12",
     "@types/hash-sum": "^1.0.0",
-    "@types/jest": "^26.0.0",
-    "@types/lodash": "^4.14.155",
+    "@types/jest": "^26.0.24",
+    "@types/lodash": "^4.14.171",
     "@types/mime-types": "^2.1.0",
     "@types/node": "*",
-    "@types/xml-parser": "^1.2.29"
+    "@types/xml-parser": "^1.2.30"
   },
   "peerDependencies": {
-    "lerna": "^3"
-  },
-  "dependencies": {
-    "fs-extra": "^9.0.1",
-    "jest": "^26.0.1",
-    "ts-jest": "^26.1.0"
+    "lerna": "^4"
   }
 }

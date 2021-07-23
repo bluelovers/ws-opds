@@ -29,19 +29,20 @@
     "sort-package-json": "npx yarn-tool sort"
   },
   "dependencies": {
-    "@node-novel/cache-loader": "^1.0.26",
-    "array-hyper-unique": "^1.1.2",
+    "@lazy-cjk/zh-slugify": "^1.0.70",
+    "@node-novel/cache-loader": "^1.0.35",
+    "array-hyper-unique": "^1.1.10",
     "bluebird": "^3.7.2",
-    "cjk-conv": "^1.2.84",
-    "fs-extra": "^9.0.1",
+    "fs-extra": "^10.0.0",
     "hash-sum": "^2.0.0",
-    "mime-types": "^2.1.27",
-    "moment": "^2.26.0",
-    "node-novel-info": "^3.0.5",
+    "mime-types": "^2.1.31",
+    "moment": "^2.29.1",
+    "node-novel-info": "^3.0.14",
     "opds-extra": "^3.0.9",
-    "regexp-cjk": "^3.3.50",
-    "str-util": "^2.3.23",
-    "uni-string": "^1.1.9"
+    "regexp-cjk": "^3.3.94",
+    "str-util": "^2.3.27",
+    "tslib": "^2.3.0",
+    "uni-string": "^1.1.11"
   },
   "publishConfig": {
     "access": "public"

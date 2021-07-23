@@ -1,12 +1,10 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.XMLSchema = void 0;
-const xmlbuilder_1 = __importDefault(require("xmlbuilder"));
-const generate_1 = __importDefault(require("./generate"));
-const parse_1 = __importDefault(require("./parse"));
+const tslib_1 = require("tslib");
+const xmlbuilder_1 = (0, tslib_1.__importDefault)(require("xmlbuilder"));
+const generate_1 = (0, tslib_1.__importDefault)(require("./generate"));
+const parse_1 = (0, tslib_1.__importDefault)(require("./parse"));
 const lodash_1 = require("lodash");
 class XMLSchema {
     constructor(schema) {
@@ -16,7 +14,7 @@ class XMLSchema {
      * Create a xml string from a schema
      */
     generate(value, options, doctype) {
-        options = lodash_1.defaults(options || {}, {
+        options = (0, lodash_1.defaults)(options || {}, {
             version: '1.0',
             encoding: 'UTF-8',
             standalone: false,

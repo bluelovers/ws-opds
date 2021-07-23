@@ -435,7 +435,7 @@ export class Feed extends Schema.Base<Feed.TSTYPE>
 {
 
 	@BeforeDeserialized()
-	protected BeforeDeserialized()
+	protected override BeforeDeserialized()
 	{
 		this._updated = moment();
 	}
@@ -512,7 +512,7 @@ export class Feed extends Schema.Base<Feed.TSTYPE>
 	@JsonElementType(String)
 	public source?: string;
 
-	static deserialize<T extends Feed, J extends Feed.TSTYPE>(json: J, options?: IParseOptions): T
+	static override deserialize<T extends Feed, J extends Feed.TSTYPE>(json: J, options?: IParseOptions): T
 	{
 		// @ts-ignore
 		return TaJson.deserialize<T>(json, this, options);

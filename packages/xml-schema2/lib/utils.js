@@ -3,12 +3,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.defaultAttribute = exports.defaultSchema = exports.isBasicValue = void 0;
 const lodash_1 = require("lodash");
 function isBasicValue(val) {
-    return lodash_1.isString(val) || lodash_1.isNumber(val) || lodash_1.isBoolean(val);
+    return (0, lodash_1.isString)(val) || (0, lodash_1.isNumber)(val) || (0, lodash_1.isBoolean)(val);
 }
 exports.isBasicValue = isBasicValue;
 // Default schema
 function defaultSchema(schema) {
-    return lodash_1.defaults(schema || {}, {
+    return (0, lodash_1.defaults)(schema || {}, {
         // Use sub-value as text/raw node
         inner: null,
         // Sub elements fields
@@ -37,7 +37,7 @@ function defaultSchema(schema) {
 exports.defaultSchema = defaultSchema;
 // Default attribute
 function defaultAttribute(schema) {
-    return lodash_1.defaults(schema || {}, {
+    return (0, lodash_1.defaults)(schema || {}, {
         // Value transformation
         transform: lodash_1.identity,
         untransform: lodash_1.identity,
